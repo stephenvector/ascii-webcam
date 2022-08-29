@@ -52,6 +52,7 @@ export default class WebcamApp {
     // raw pixel data coming fromt the webcam.
     this.videoElement = document.createElement("video");
     this.videoElement.autoplay = true;
+    this.videoElement.muted = true;
 
     // This isn't added to the document either, since it's for reading
     // the raw image data from. We could probably get by without this,
