@@ -96,11 +96,6 @@ export default class WebcamApp {
   }
 
   onVideoLoadedMetadata() {
-    try {
-      this.videoElement.play();
-    } catch (e) {
-      console.error(e);
-    }
     this.animationFrameRequestId = window.requestAnimationFrame(this.drawVideo);
   }
 
