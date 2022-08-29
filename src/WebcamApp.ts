@@ -79,6 +79,7 @@ export default class WebcamApp {
   toggleStart() {
     this.active = !this.active;
     this.buttonElement.innerText = this.active ? "Pause" : "Start";
+    this.videoElement.play();
 
     if (this.active) {
       this.startWebcam();
@@ -94,7 +95,6 @@ export default class WebcamApp {
   }
 
   onVideoLoadedMetadata() {
-    this.videoElement.play();
     this.animationFrameRequestId = window.requestAnimationFrame(this.drawVideo);
   }
 
