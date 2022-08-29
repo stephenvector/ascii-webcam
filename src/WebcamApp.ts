@@ -122,9 +122,9 @@ export default class WebcamApp {
     const characterAspectRatio =
       this.characterDimensions.width / this.characterDimensions.height;
 
-    this.canvasElement.width = this.videoElement.videoWidth; //numCharactersWide;
+    this.canvasElement.width = this.videoElement.videoWidth / 4;
     this.canvasElement.height =
-      this.videoElement.videoHeight * characterAspectRatio; //numCharactersTall;
+      (this.videoElement.videoHeight * characterAspectRatio) / 4;
 
     this.canvasContext.drawImage(
       this.videoElement,
@@ -155,7 +155,7 @@ export default class WebcamApp {
 
       // Add a newline if we're at the end of a row of characters
       pixelNumber++;
-      if (pixelNumber % this.videoElement.videoWidth === 0) {
+      if (pixelNumber % this.canvasElement.width === 0) {
         videoFrameCharacters.push("\n");
       }
     }
