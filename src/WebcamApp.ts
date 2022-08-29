@@ -53,6 +53,7 @@ export default class WebcamApp {
     this.videoElement = document.createElement("video");
     this.videoElement.autoplay = true;
     this.videoElement.muted = true;
+    this.videoElement.style.display = "none";
 
     // This isn't added to the document either, since it's for reading
     // the raw image data from. We could probably get by without this,
@@ -74,6 +75,7 @@ export default class WebcamApp {
 
     this.rootElement.appendChild(this.preElement);
     this.rootElement.appendChild(this.buttonElement);
+    this.rootElement.appendChild(this.videoElement);
   }
 
   setError(e: unknown) {}
