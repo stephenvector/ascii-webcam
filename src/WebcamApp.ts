@@ -51,6 +51,7 @@ export default class WebcamApp {
     // scale the video so that we can resize it easily and access the
     // raw pixel data coming fromt the webcam.
     this.videoElement = document.createElement("video");
+    this.videoElement.autoplay = true;
 
     // This isn't added to the document either, since it's for reading
     // the raw image data from. We could probably get by without this,
@@ -79,7 +80,6 @@ export default class WebcamApp {
   toggleStart() {
     this.active = !this.active;
     this.buttonElement.innerText = this.active ? "Pause" : "Start";
-    this.videoElement.play();
 
     if (this.active) {
       this.startWebcam();
