@@ -57,3 +57,15 @@ pre {
   box-shadow: inset 0 0 0 2px #000;
   color: #000;
 }
+
+// We need the video element to stay visible on the page for iOS to keep playing
+// it. This is a workaround to make it happen.
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  display: block;
+}

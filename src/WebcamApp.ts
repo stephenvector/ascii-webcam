@@ -44,15 +44,17 @@ export default class WebcamApp {
     this.buttonElement.className = "toggleButton";
     this.buttonElement.addEventListener("click", this.toggleStart);
 
-    // We don't append this video to the document, because we
+    // We append this video to the document, but we
     // don't want to actually display it, just use the data from the
     // webcam that's piped to the it, so that we can then pipe that
     // data to a canvas element. The canvas element will allow us to
     // scale the video so that we can resize it easily and access the
-    // raw pixel data coming fromt the webcam.
+    // raw pixel data coming fromt the webcam. It has to be in the viewport
+    // for iOS to keep playing th video
     this.videoElement = document.createElement("video");
     this.videoElement.autoplay = true;
     this.videoElement.muted = true;
+    this.videoElement.playsInline = true;
     this.videoElement.style.display = "none";
 
     // This isn't added to the document either, since it's for reading
