@@ -54,6 +54,7 @@ export default class WebcamApp {
     this.videoElement.autoplay = true;
     this.videoElement.muted = true;
     this.videoElement.style.display = "none";
+    this.videoElement.playsinline = true;
 
     // This isn't added to the document either, since it's for reading
     // the raw image data from. We could probably get by without this,
